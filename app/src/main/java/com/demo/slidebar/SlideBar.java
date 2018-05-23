@@ -27,11 +27,12 @@ public class SlideBar extends View {
     private int chooseIndex = -1;
     //字母是否被选中
     private boolean LetterTouched;
-    private OnTouchChangeListener onTouchChangeListener;
     //测量出的字母的高度
     private int letterHeight;
     //默认字体的大小
     private int fontSize = 30;
+    private OnTouchChangeListener onTouchChangeListener;
+
 
     public SlideBar(Context context) {
         super(context);
@@ -138,6 +139,9 @@ public class SlideBar extends View {
         }
     }
 
+    /**
+     * 手指离开的时候改变相应的状态
+     */
     private void LetterTouchedCancel() {
         mPaint.setColor(normalColor);
         chooseIndex = -1;
