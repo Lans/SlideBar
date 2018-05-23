@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="horizontal"
+    tools:context=".MainActivity">
+
+    <ListView
+        android:id="@+id/list"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1" />
+
+    <com.demo.slidebar.SlideBar
+        android:id="@+id/slideBar"
+        android:layout_width="30dp"
+        android:layout_height="match_parent"
+        android:layout_alignRight="@id/list"
+        app:normalColor="#cfcdcd"
+        app:touchColor="#f95757" />
+
+    <TextView
+        android:id="@+id/hitText"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_centerInParent="true"
+        android:background="#97050505"
+        android:gravity="center"
+        android:textColor="#FFF"
+        android:textSize="30sp"
+        android:visibility="gone"
+        tools:text="L" />
+</RelativeLayout>
