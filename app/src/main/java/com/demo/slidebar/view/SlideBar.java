@@ -1,4 +1,4 @@
-package com.demo.slidebar;
+package com.demo.slidebar.view;
 
 import android.content.Context;
 import android.content.res.TypedArray;
@@ -11,6 +11,8 @@ import android.util.AttributeSet;
 import android.util.TypedValue;
 import android.view.MotionEvent;
 import android.view.View;
+
+import com.demo.slidebar.R;
 
 public class SlideBar extends View {
     private Paint mPaint;
@@ -44,8 +46,10 @@ public class SlideBar extends View {
         TypedArray typedArray = context.obtainStyledAttributes(attrs, R.styleable.SlideBar);
         int nColor = typedArray.getColor(R.styleable.SlideBar_normalColor, normalColor);
         int tColor = typedArray.getColor(R.styleable.SlideBar_touchColor, touchColor);
+        int dimension = (int) typedArray.getDimension(R.styleable.SlideBar_fontSize, fontSize);
         this.normalColor = nColor;
         this.touchColor = tColor;
+        this.fontSize = dimension;
         typedArray.recycle();
     }
 

@@ -3,5 +3,6 @@
     <declare-styleable name="SlideBar">
         <attr name="touchColor" format="color|reference" />
         <attr name="normalColor" format="color|reference" />
+        <attr name="fontSize" format="dimension|reference" />
     </declare-styleable>
 </resources>

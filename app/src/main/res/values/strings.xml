@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">SlideBar</string>
+    <string name="head_img">联系人头像</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>
