@@ -18,6 +18,7 @@ import com.demo.slidebar.R;
 public class ClearEditText extends AppCompatEditText implements View.OnFocusChangeListener, TextWatcher {
     private Drawable mDrawable;
     private boolean focus;
+    private float eventX;
 
     public ClearEditText(Context context) {
         super(context);
@@ -50,16 +51,23 @@ public class ClearEditText extends AppCompatEditText implements View.OnFocusChan
     @Override
     public boolean onTouchEvent(MotionEvent event) {
         if (event.getAction() == MotionEvent.ACTION_UP) {
-            if (mDrawable != null) {
-                int start = getWidth() - getTotalPaddingRight() + getPaddingRight(); // 起始位置
-                int end = getWidth(); // 结束位置
-                boolean available = (event.getX() > start) && (event.getX() < end);
-                if (available) {
-                    this.setText("");
-                }
-            }
+            eventX = event.getX();
+            performClick();
         }
         return super.onTouchEvent(event);
+    }
+
+    @Override
+    public boolean performClick() {
+        if (mDrawable != null) {
+            int start = getWidth() - getTotalPaddingRight() + getPaddingRight(); // 起始位置
+            int end = getWidth(); // 结束位置
+            boolean available = (eventX > start) && (eventX < end);
+            if (available) {
+                this.setText("");
+            }
+        }
+        return super.performClick();
     }
 
     @Override

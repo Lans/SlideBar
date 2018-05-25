@@ -17,6 +17,7 @@
             android:id="@+id/clearEditText"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:drawableLeft="@drawable/ic_back"
             android:hint="搜索联系人"
             android:minWidth="50dp"
             android:paddingStart="10dp"

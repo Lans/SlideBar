@@ -24,7 +24,6 @@ import java.util.List;
  */
 public class ContactFragment extends Fragment implements SlideBar.OnTouchChangeListener {
     private TextView hitText;
-    private SlideBar slideBar;
     private RecyclerView recyclerView;
     private List<Contact> mContactBeanList;
     private ContactAdapter mContactAdapter;
@@ -64,7 +63,7 @@ public class ContactFragment extends Fragment implements SlideBar.OnTouchChangeL
 
     private void initView(View mView) {
         hitText = mView.findViewById(R.id.hitText);
-        slideBar = mView.findViewById(R.id.slideBar);
+        SlideBar slideBar = mView.findViewById(R.id.slideBar);
         recyclerView = mView.findViewById(R.id.recyclerView);
         layoutManager = new LinearLayoutManager(getActivity());
         recyclerView.setLayoutManager(layoutManager);
