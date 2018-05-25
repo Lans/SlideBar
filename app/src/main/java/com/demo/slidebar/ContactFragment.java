@@ -13,6 +13,7 @@ import android.widget.TextView;
 
 import com.demo.slidebar.adpter.ContactAdapter;
 import com.demo.slidebar.bean.ContactBean;
+import com.demo.slidebar.roomdatabsae.Contact;
 import com.demo.slidebar.view.SlideBar;
 
 import java.io.Serializable;
@@ -25,7 +26,7 @@ public class ContactFragment extends Fragment implements SlideBar.OnTouchChangeL
     private TextView hitText;
     private SlideBar slideBar;
     private RecyclerView recyclerView;
-    private List<ContactBean> mContactBeanList;
+    private List<Contact> mContactBeanList;
     private ContactAdapter mContactAdapter;
     private LinearLayoutManager layoutManager;
 
@@ -36,10 +37,10 @@ public class ContactFragment extends Fragment implements SlideBar.OnTouchChangeL
      * Use this factory method to create a new instance of
      * this fragment using the provided parameters.
      */
-    public static ContactFragment newInstance(List<ContactBean> mContactBeanList) {
+    public static ContactFragment newInstance(List<Contact> mContactBeanList) {
         ContactFragment fragment = new ContactFragment();
         Bundle args = new Bundle();
-        args.putSerializable("ContactBeanList", (Serializable) mContactBeanList);
+        args.putSerializable("ContactList", (Serializable) mContactBeanList);
         fragment.setArguments(args);
         return fragment;
     }
@@ -49,7 +50,7 @@ public class ContactFragment extends Fragment implements SlideBar.OnTouchChangeL
         super.onCreate(savedInstanceState);
         if (getArguments() != null) {
 
-            mContactBeanList = (List<ContactBean>) getArguments().getSerializable("ContactBeanList");
+            mContactBeanList = (List<Contact>) getArguments().getSerializable("ContactList");
         }
     }
 

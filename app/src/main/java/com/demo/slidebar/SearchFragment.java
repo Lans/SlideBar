@@ -12,6 +12,7 @@ import android.view.ViewGroup;
 
 import com.demo.slidebar.adpter.SearchAdapter;
 import com.demo.slidebar.bean.ContactBean;
+import com.demo.slidebar.roomdatabsae.Contact;
 
 import java.io.Serializable;
 import java.util.List;
@@ -22,14 +23,14 @@ import java.util.List;
  */
 public class SearchFragment extends Fragment {
 
-    private List<ContactBean> mContactBeanList;
+    private List<Contact> mContactBeanList;
 
     public SearchFragment() {
     }
 
-    public static SearchFragment newInstance(List<ContactBean> mContactBeanList) {
+    public static SearchFragment newInstance(List<Contact> mContactBeanList) {
         Bundle args = new Bundle();
-        args.putSerializable("ContactBeanList", (Serializable) mContactBeanList);
+        args.putSerializable("ContactList", (Serializable) mContactBeanList);
         SearchFragment fragment = new SearchFragment();
         fragment.setArguments(args);
         return fragment;
@@ -39,7 +40,7 @@ public class SearchFragment extends Fragment {
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         if (getArguments() != null) {
-            mContactBeanList = (List<ContactBean>) getArguments().getSerializable("ContactBeanList");
+            mContactBeanList = (List<Contact>) getArguments().getSerializable("ContactList");
         }
     }
 
